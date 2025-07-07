@@ -50,5 +50,8 @@ def run_agent(message):
     except Exception as e:
         import traceback
         traceback.print_exc()
-        return f"⚠️ Agent Error: {str(e)}"
+        error_message = str(e)
+        if "Failed to call a function" in error_message:
+            return "⚠️ Sorry, this action can't be performed with the current model."
+        return f"⚠️ Agent Error: {error_message}"
 
