@@ -1,0 +1,10 @@
+langchain
+openai
+google-api-python-client
+google-auth
+uvicorn
+fastapi
+streamlit
+python-dotenv
+langchain-community
+langchain-groq
