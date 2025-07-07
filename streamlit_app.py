@@ -7,8 +7,8 @@ st.set_page_config(page_title="📅 Calendar Booking Assistant")
 st.title("📅 Calendar Booking Assistant")
 
 
-# backend_url = "https://calender-booking-2w76.onrender.com/chat"
-backend_url = "http://127.0.0.1:8000/chat"
+backend_url = "https://calender-booking-2w76.onrender.com/chat"
+# backend_url = "http://127.0.0.1:8000/chat"
 
 
 def normalize_prompt(text):
