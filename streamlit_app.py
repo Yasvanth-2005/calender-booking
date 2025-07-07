@@ -20,7 +20,6 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
     
     try:
-        # Post to backend
         response = requests.post(backend_url, json={"message": user_input})
         response.raise_for_status()
         reply = response.json().get("response") or "No reply"
