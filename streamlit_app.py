@@ -4,7 +4,7 @@ import requests
 st.set_page_config(page_title="Calendar Booking Assistant")
 st.title("📅 Calendar Booking Assistant")
 
-backend_url = "https://your-fastapi-url/chat" 
+backend_url = "https://calender-booking-2w76.onrender.com/chat" 
 
 if 'messages' not in st.session_state:
     st.session_state.messages = []
