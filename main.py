@@ -29,4 +29,13 @@ class Message(BaseModel):
 
 @app.post("/chat")
 def chat(message: Message):
-    return {"response": run_agent(message.message)}
+    try:
+        print("Received message:", message.message)
+        result = run_agent(message.message)
+        print("Agent result:", result)
+        return {"response": result}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return {"response": f"⚠️ Error occurred: {str(e)}"}
+

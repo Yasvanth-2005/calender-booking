@@ -37,9 +37,17 @@ agent = create_tool_calling_agent(
     prompt=prompt,
 )
 
-
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
 
-def run_agent(message: str):
-    return agent_executor.invoke({"input": message})["output"]
+def run_agent(message):
+    try:
+        print("Input to agent:", message)
+        response = agent_executor.invoke({"input": message})
+        print("Raw response:", response)
+        return response.get("output", "⚠️ No output from agent")
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return f"⚠️ Agent Error: {str(e)}"
+
